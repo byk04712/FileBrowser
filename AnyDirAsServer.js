@@ -5,6 +5,7 @@
  */
 var http = require('http');
 var fs = require('fs');
+var os = require('os');
 
 // 默认当前路径
 var defaultPath = __dirname;
@@ -38,7 +39,12 @@ var server = http.createServer(function(req, res) {
 	 */
 	function fileList(path = defaultPath) {
 		var html = '';
-		console.log(path);
+		// 如果是windows系统
+		if ('Windows_NT' == os.type()) {
+			var index = path.indexOf(':');
+			path = path.slice(index + 1);
+		}
+		// console.log(os.type() + '              ' + path);
 		fs.readdirSync(path).forEach(function(item) {
 			var href = (path + '/' + item).replace('//', '/');
 			html += '<a href="' + href + '">' + item + '</a><br/>';
