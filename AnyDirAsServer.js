@@ -8,10 +8,10 @@ var fs = require('fs');
 var os = require('os');
 
 // 默认当前路径
-var defaultPath = __dirname;
+var defaultPath = '/Users/andy';
 
 var server = http.createServer(function(req, res) {
-	// 访问 http://localhost:3000 时列出当前目录列表
+	// 访问主页时列出当前目录列表
 	console.log('visited : ', req.url);
 	if ('/' === req.url) {
 		res.writeHead(200, { 'Content-Type': 'text/html' });
@@ -44,7 +44,6 @@ var server = http.createServer(function(req, res) {
 			var index = path.indexOf(':');
 			path = path.slice(index + 1);
 		}
-		// console.log(os.type() + '              ' + path);
 		fs.readdirSync(path).forEach(function(item) {
 			var href = (path + '/' + item).replace('//', '/');
 			html += '<a href="' + href + '">' + item + '</a><br/>';
@@ -54,5 +53,5 @@ var server = http.createServer(function(req, res) {
 });
 
 server.listen(3000, function() {
-	console.log('Server started at http://localhost:3000');
+	console.log('Server started at http://*:3000');
 });
