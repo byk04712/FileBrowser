@@ -14,7 +14,7 @@
 
 # 实现步骤 
 
-> 如果嫌我啰嗦的话，可直接查看源代码 CurrentDirAsServer.js 或 AnyDirAsServer.js 代码量也不过50行
+> 如果嫌我啰嗦的话，可直接查看源代码 [CurrentDirAsServer.js](./CurrentDirAsServer.js) 或 [AnyDirAsServer.js](./AnyDirAsServer.js) 代码量也不过50行
 
 1. 从最简单的一个nodejs服务开始
 `server.js`
@@ -156,4 +156,5 @@ var server = http.createServer(function(req, res) {
 分了两个版本
 
 [任意目录作为文件服务器 AnyDirAsServer.js](./AnyDirAsServer.js)
+
 [当前目录作为文件服务器 CurrentDirAsServer.js](CurrentDirAsServer.js)
