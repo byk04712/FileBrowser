@@ -1,3 +1,5 @@
+# 将文件目录作为文件服务器
+
 >本文使用nodejs讲解将自己电脑文件夹作为服务器，使用浏览器来访问文件目录和查看文件内容。
 
 # 预览
@@ -10,7 +12,9 @@
 -  只需要有`node`环境即可。
 -  兼容 `mac os`，`windows` 和 `linux`。
 
-# 实现步骤
+# 实现步骤 
+
+> 如果嫌我啰嗦的话，可直接查看源代码 CurrentDirAsServer.js 或 AnyDirAsServer.js 代码量也不过50行
 
 1. 从最简单的一个nodejs服务开始
 `server.js`
@@ -149,4 +153,7 @@ var server = http.createServer(function(req, res) {
 
 至此我们已经改造完毕。
 
-[点击查看完整源码](https://github.com/byk04712/FileBrowser)
+分了两个版本
+
+[任意目录作为文件服务器 AnyDirAsServer.js](./AnyDirAsServer.js)
+[当前目录作为文件服务器 CurrentDirAsServer.js](CurrentDirAsServer.js)

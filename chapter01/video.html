@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用video标签播放动画</title>
+</head>
+<body>
+	<video src="hoge.mp4" width="640" height="360" preload="auto" src="hoge.png" controls autoplay>
+		<!-- 针对播放webm格式动画的浏览器 -->
+		<source src="hoge.webm" type='video/webm; codecs="vp8, vorbis"' />
+		<!-- 针对播放ogv格式动画的浏览器 -->
+		<source src="hoge.ogv" type='video/ogg; codecs="theora, vorbis"' />
+		<!-- 针对播放mp4格式动画的浏览器 -->
+		<source src="hoge.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+		<!-- 当浏览器无法使用video标签的时候 -->
+		<p>无法播放动画。<a href="hoge.html">推荐环境请看这里。</p>
+	</video>
+</body>
+</html>
